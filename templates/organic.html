@@ -1,0 +1,35 @@
+{% extends 'layout.html' %} {% block body %}
+
+
+<section class="blog py-5">
+	<div class="container py-md-5">
+		<h3 class="heading mb-sm-5 mb-4 text-center">ORGANIC FARMING</h3>
+		<div class="row blog-grids">
+			<div class="col-lg-6 col-md-4 blog-left mb-lg-0 mb-sm-5 pb-lg-0 pb-5" style=" padding: 4%;">
+				<img src="{{ url_for('static', filename='images/home.jpeg') }}" class="img-fluid" alt="" style=" width: 81%; border-radius: 2%;" />
+				<a href="{{ url_for('homeorganicresult') }}">
+					<div class="col-lg-6 blog-info" style="left:9%;">
+
+						<h4>Home farm</h4>
+
+						<p class=" mt-3"> Step by Step home organic farming tutorial.  </p>
+					</div>
+				</a>
+			</div>
+			<div class="col-lg-6 col-md-4 blog-right mb-lg-0 mb-sm-5 pb-lg-0 pb-md-5" style=" padding: 4%;">
+				<img src="{{ url_for('static', filename='images/largefarming.jpeg') }}" class="img-fluid" alt="" style=" width: 81%; border-radius: 2%;"/>
+				<a href="{{ url_for('farmOrganicResult') }}">
+					<div class="col-lg-6 blog-info" style="left: 9%;">
+						<h4>large farm</h4>
+						<p class="mt-3"> Steps for large organic farming methods and practices</p>
+					</div>
+				</a>
+			</div>
+
+		</div>
+	</div>
+</section>
+
+
+
+{% endblock %}

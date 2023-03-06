@@ -1,0 +1,172 @@
+{% extends 'layout.html' %} {% block body %}
+<html>
+  <head>
+    <title>Organic Farming in Large Farms</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+        margin: 0;
+        padding: 0;
+      }
+
+      h1 {
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        color: #008080;
+      }
+
+      ol {
+        padding-left: 30px;
+      }
+
+      li {
+        margin-bottom: 10px;
+      }
+
+      ul {
+        list-style-type: circle;
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
+    </style>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="text-white ">
+      <h1 class="text-dark fs-1 display-1" style="margin: 20px 20px ;">ORGANIC FARMING IN LARGE FARMS</h1>
+    </div>
+    <div class="container">
+      <br />
+      <ol>
+        <div class="row">
+          <div class="col">
+            <li class="fs-3 fw-bold">Organic manures</li>
+            <p>
+              Green manuring with crops like Sesbania, cowpea, and green gram
+              can improve soil organic matter content, but their use has
+              declined due to intensive cropping and socioeconomic reasons. To
+              address these constraints, the International Federation of Organic
+              Agriculture Movement (IFOAM) and Codex Alimentarius have approved
+              the use of some inorganic sources of plant nutrients, like rock
+              phosphate and rock potash, in organic farming systems. These
+              substances can supply essential nutrients without unacceptable
+              effects on produce and the environment, including soil organisms.
+            </p>
+          </div>
+          <div class="col">
+            <img
+              src="https://www.farmingindia.in/wp-content/uploads/organic-manure.jpg"
+              alt="..."
+              class="toptop object-fit-cover border rounded h-75 w-75"
+            />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <li class="fs-3 fw-bold">Bacterial and fungal biofertilizers</li>
+            <p>
+              Contribution of biological fixation of nitrogen on surface of
+              earth is the highest (67.3%) among all the sources of N fixation.
+              Following bacterial and fungal biofertilizers can be used as a
+              component of organic farming in different crops.
+            </p>
+            <ul>
+              <li>
+                <b>Rhizobium :</b> The effectiveness of symbiotic N2 fixing
+                bacteria viz. Rhizobia for legume crops eg. Rhizobium,
+                Bradyrhizobium, Sinorhizobium, Azorhizobium, and Mesorhizobium
+                etc have been well recognized. These bacteria infecting legumes
+                have a global distribution. These rhizobia have a N2-fixing
+                capability up to 450 kg N ha–1 depending on host- plant species
+                and bacterial strains. Carrier based inoculants can be coated on
+                seeds for the introduction of bacterial strains into soil
+              </li>
+              <li>
+                <b>Azospirillum:</b> The genus Azospirillum colonizes in a
+                variety of annual and perennial plants. Studies indicate that
+                Azospirillum can increase the growth of crops like sunflower,
+                carrot, oak, sugarbeet, tomato, pepper, cotton, wheat and rice.
+                The crop yield can increase from 5-30%. Inoculum of Azotobacter
+                and Azospirillum can be produced and applied as in peat
+                formulation through seed coating. The peat formulation can also
+                be directly utilized in field applications.
+              </li>
+            </ul>
+          </div>
+
+          <div class="col">
+            <img
+              src="https://4.imimg.com/data4/LS/QQ/MY-7464678/mycorrhizal-fungi-500x500.jpg"
+              class="toptop object-fit-cover border rounded h-75 w-75"
+              alt="..."
+            />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <li class="fs-3 fw-bold">Insect pest management</li>
+            <p>
+              The key to building a population of beneficial insects is to
+              establish borders (host crops) around fields planted with blends
+              of flowering plants that the beneficial insects particularly like.
+              Then periodically beneficial insects are released into the fields,
+              where the host crops serve as their home base and attract more
+              beneficial insects over time. When faced with a pest outbreak that
+              cannot be handled by beneficial insects, the used of natural or
+              other organically approved insecticides like neem pesticides is
+              done.
+            </p>
+          </div>
+          <div class="col">
+            <img
+              src="data:image/jpeg;base64,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"
+              class="toptop object-fit-cover border rounded h-75 w-75"
+              alt="..."
+            />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <li class="fs-3 fw-bold">Diseases management</li>
+            <p>
+              Plant diseases are major constraints for reductions in crop yield
+              and quality in organic and low input production systems. Proper
+              fertility management to crops through balanced supply of macro and
+              micronutrients and adoption of crop rotation have shown to improve
+              the resistance of crops to certain diseases. Thus one of the
+              biggest rewards of organic farming is healthy soil that is alive
+              with beneficial organisms. These healthy microbes, fungi and
+              bacteria keep the harmful bacteria and fungi that cause disease in
+              check.
+            </p>
+          </div>
+          <div class="col">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Ecologically_grown_vegetables.jpg"
+              alt="..."
+              class="toptop object-fit-cover border rounded h-75 w-75"
+            />
+          </div>
+        </div>
+      </ol>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
+
+{% endblock %}

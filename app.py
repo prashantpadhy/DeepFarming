@@ -133,15 +133,44 @@ app = Flask(__name__)
 
 @ app.route('/')
 def home():
-    title = 'Harvestify - Home'
+    title = 'DeepFarming - Home'
     return render_template('index.html', title=title)
 
 # render crop recommendation form page
 
+@ app.route('/organic')
+def organic():
+    title = 'Organic farming'
+
+    return render_template('organic.html', title=title)
+
+#render homeorganic page
+@ app.route('/homeorganic')
+def homeorganic():
+    title = 'home organic farming'
+
+    return render_template('homeorganic.html', title=title)
+
+#render startfarming page
+@ app.route('/startFarming')
+def startFarming():
+    title = 'start farming'
+
+    return render_template('startFarming.html', title=title)
+
+
+#render farmorganic page
+@ app.route('/farmorganic')
+def farmorganic():
+    title = 'farm Organic farming'
+
+    return render_template('farmorganic.html', title=title)
+
+
 
 @ app.route('/crop-recommend')
 def crop_recommend():
-    title = 'Harvestify - Crop Recommendation'
+    title = 'Crop Recommendation'
     return render_template('crop.html', title=title)
 
 # render fertilizer recommendation form page
@@ -149,9 +178,26 @@ def crop_recommend():
 
 @ app.route('/fertilizer')
 def fertilizer_recommendation():
-    title = 'Harvestify - Fertilizer Suggestion'
+    title = 'Fertilizer Suggestion'
 
     return render_template('fertilizer.html', title=title)
+# render home organic result
+
+
+@ app.route('/homeorganicresult')
+def homeorganicresult():
+    title = 'home organic'
+
+    return render_template('homeorganicresult.html', title=title)
+
+# render farm organic result
+
+
+@ app.route('/farmOrganicResult')
+def farmOrganicResult():
+    title = 'large farm organic farming'
+
+    return render_template('farmOrganicResult.html', title=title)
 
 # render disease prediction input page
 
@@ -167,7 +213,7 @@ def fertilizer_recommendation():
 
 @ app.route('/crop-predict', methods=['POST'])
 def crop_prediction():
-    title = 'Harvestify - Crop Recommendation'
+    title = ' Crop Recommendation'
 
     if request.method == 'POST':
         N = int(request.form['nitrogen'])
@@ -178,14 +224,15 @@ def crop_prediction():
 
         # state = request.form.get("stt")
         city = request.form.get("city")
-
+        
+        api= "https://www.google.com/maps/embed/v1/search?key=AIzaSyBf25IzqHFo2ZTC1vPoplhDR0Nwt-PLep4&q=seed+suppliers+in+"+city
         if weather_fetch(city) != None:
             temperature, humidity = weather_fetch(city)
             data = np.array([[N, P, K, temperature, humidity, ph, rainfall]])
             my_prediction = crop_recommendation_model.predict(data)
             final_prediction = my_prediction[0]
-
-            return render_template('crop-result.html', prediction=final_prediction, title=title)
+            api= "https://www.google.com/maps/embed/v1/search?key=AIzaSyBf25IzqHFo2ZTC1vPoplhDR0Nwt-PLep4&q="+final_prediction+"+seed+suppliers+in+"+city
+            return render_template('crop-result.html', prediction=final_prediction, title=title,city=city,api=api.replace(" ",""))
 
         else:
 
@@ -196,14 +243,14 @@ def crop_prediction():
 
 @ app.route('/fertilizer-predict', methods=['POST'])
 def fert_recommend():
-    title = 'Harvestify - Fertilizer Suggestion'
+    title = 'Fertilizer Suggestion'
 
     crop_name = str(request.form['cropname'])
     N = int(request.form['nitrogen'])
     P = int(request.form['phosphorous'])
     K = int(request.form['pottasium'])
     # ph = float(request.form['ph'])
-
+    city = request.form.get("city")
     df = pd.read_csv('Data/fertilizer.csv')
 
     nr = df[df['Crop'] == crop_name]['N'].iloc[0]
@@ -232,15 +279,16 @@ def fert_recommend():
             key = "Klow"
 
     response = Markup(str(fertilizer_dic[key]))
+    api= "https://www.google.com/maps/embed/v1/search?key=AIzaSyBf25IzqHFo2ZTC1vPoplhDR0Nwt-PLep4&q="+crop_name+"+fertilizer+suppliers+in+"+city
 
-    return render_template('fertilizer-result.html', recommendation=response, title=title)
+    return render_template('fertilizer-result.html', recommendation=response, title=title,city=city,crop=crop_name,api=api.replace(" ",""))
 
 # render disease prediction result page
 
 
 @app.route('/disease-predict', methods=['GET', 'POST'])
 def disease_prediction():
-    title = 'Harvestify - Disease Detection'
+    title = ' Disease Detection'
 
     if request.method == 'POST':
         if 'file' not in request.files:

@@ -1,0 +1,147 @@
+{% extends 'layout.html' %} {% block body %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Steps for Farming</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+        margin: 0;
+        padding: 0;
+      }
+
+      h1 {
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        color: #008080;
+      }
+
+      ol {
+        padding-left: 30px;
+      }
+
+      li {
+        margin-bottom: 10px;
+      }
+
+      ul {
+        list-style-type: circle;
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
+    </style>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="text-white ">
+        <h1 class="text-dark fs-1 display-1" style="margin: 20px 20px;">KEY ASPECTS OF ORGANIC HOME FARMING</h1>
+      </div>
+    <div class="container">
+     
+      <br />
+      <ol>
+        <div class="row">
+          <div class="col">
+            <li class="fs-3 fw-bold">Choosing the right location</li>
+            <p>The first step in home farming is to select an appropriate location for planting. Look for an area with plenty of sunlight, good drainage, and easy access to water. Consider the size of your garden and the type of plants you want to grow.</p>
+          </div>
+          <div class="col">
+            <img
+              src="data:image/png;base64,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"
+              alt="..."
+              class="object-fit-cover border rounded h-75 w-75"
+            />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <li class="fs-3 fw-bold">Deciding what to plant:</li>
+            <p>Determine what kind of plants you want to grow. Consider the climate, soil, and space available. Some popular home farming crops include tomatoes, peppers, herbs, lettuce, and cucumbers. Research which plants thrive in your area and what season they should be planted in.</p>
+          </div>
+          <div class="col">
+            <img
+              src="https://cdn.shopify.com/s/files/1/1380/2059/files/Pick_a_type-1_large.jpg?v=1589271476"
+              class="object-fit-cover border rounded h-75 w-75"
+              alt="..."
+            />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <li class="fs-3 fw-bold">Soil preparation</li>
+            <p>Prepare the soil by removing any debris, rocks, or weeds. Then, add compost or fertilizer to provide the plants with the necessary nutrients. Make sure to till the soil to improve its texture and aeration.</p>
+          </div>
+          <div class="col">
+            <img
+              src="https://www.farmers.gov/sites/default/files/03122019Blog_WSS_Photo1Sized.jpg"
+              class="object-fit-cover border rounded h-75 w-75"
+              alt="..."
+            />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <li class="fs-3 fw-bold">Planting</li>
+            <p>Once you have prepared the soil, it's time to plant your crops. Follow the instructions on the seed packet or plant tag for the optimal planting depth and spacing. Make sure to water the plants regularly and provide support for vines or trellised plants.</p>
+          </div>
+          <div class="col">
+            <img
+              src="data:image/jpeg;base64,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"
+              class="object-fit-cover border rounded h-75 w-75"
+              alt="..."
+            />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <li class="fs-3 fw-bold">Maintenance</li>
+            <p>To maintain healthy plants, it's important to regularly weed, water, and fertilize your garden. Monitor your plants for pests and diseases and take appropriate action to prevent or treat them.</p>
+          </div>
+          <div class="col">
+            <img
+                 src="https://savvygardening.com/wp-content/uploads/2017/06/container-garden-maintenance.jpg"
+                class="object-fit-cover border rounded h-75 w-75"
+              alt="..."
+            />
+          </div>
+        </div>
+
+       
+
+        <div class="row">
+            <div class="col">
+              <li class="fs-3 fw-bold">Harvesting</li>
+             <p>When your plants are ready to be harvested, pick them at the right time to ensure the best flavor and quality. Store your crops properly to keep them fresh for as long as possible</p>
+            </div>
+            <div class="col">
+              <img
+                src="https://www.gardeningknowhow.com/wp-content/uploads/2017/04/imgpsh_fullsize-24.jpg"
+                class="object-fit-cover border rounded h-75 w-75"
+                alt="..."
+              />
+            </div>
+          </div>
+
+      </ol>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
+{% endblock %}

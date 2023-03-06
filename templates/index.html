@@ -9,15 +9,17 @@
 					<div class="overlay">
 						<div class="container">
 							<div class="w3layouts-banner-info text-center">
-								<h3 class="text-wh">Harvestify</h3>
+								<h3 class="text-wh">DeepFarming</h3>
 								<h4 class="text-wh mx-auto my-4"><b>Get informed decisions about your farming strategy.</b></h4>
 								<br>
-								<h4 class="text-wh mx-auto my-4"><strong> Here are some questions we'll answer</strong></h4>
+								<h4 class="text-wh mx-auto my-4"><strong>Where the life begins.</strong></h4>
 								<p class="text-li mx-auto mt-2">
-									1. What crop to plant here? <br>
-									2. What fertilizer to use? <br>
-									3. Which disease do your crop have?<br>
-									4. How to cure the disease?</p>
+									1. Start your own farm. <br>
+									2. Get precised crop recommendation. <br>
+									3. Which fertilizer is best for you. <br>
+									4. Disease recognisation.<br>
+									5. Disease prevention techniques.<br>
+									6. Know more about organic farming. </p>
 							</div>
 						</div>
 					</div>
@@ -51,7 +53,7 @@
 <!-- Products & Services -->
 <section class="blog py-5">
 	<div class="container py-md-5">
-		<h3 class="heading mb-sm-5 mb-4 text-center"> Our Services</h3>
+		<h3 class="heading mb-sm-5 mb-4 text-center"> We provide</h3>
 		<div class="row blog-grids">
 			<div class="col-lg-4 col-md-6 blog-left mb-lg-0 mb-sm-5 pb-lg-0 pb-5">
 				<img src="{{ url_for('static', filename='images/s3.jpg') }}" class="img-fluid" alt="" />
@@ -75,15 +77,28 @@
 					</div>
 				</a>
 			</div>
+			<!-- <div class="col-lg-4 col-md-6 blog-right mt-lg-0 mt-5 pt-lg-0 pt-md-5">
+
+				<img src="{{ url_for('static', filename='images/s4.jpg') }}" class="img-fluid" alt="">
+
+				<img src="images/s4.jpg" class="img-fliud" alt="" /> 
+				<a href="{{ url_for('disease_prediction') }}">
+					<div class="blog-info">
+						<h4>Crop Disease</h4>
+						<p class="mt-2">Predicting the name and causes of crop disease and suggestions to cure it</p>
+					</div>
+				</a>
+			</div> -->
+			<!-- organic farming option -->
 			<div class="col-lg-4 col-md-6 blog-right mt-lg-0 mt-5 pt-lg-0 pt-md-5">
 
 				<img src="{{ url_for('static', filename='images/s4.jpg') }}" class="img-fluid" alt="">
 
 				<!-- <img src="images/s4.jpg" class="img-fliud" alt="" /> -->
-				<a href="{{ url_for('disease_prediction') }}">
+				<a href="{{ url_for('organic') }}">
 					<div class="blog-info">
-						<h4>Crop Disease</h4>
-						<p class="mt-2">Predicting the name and causes of crop disease and suggestions to cure it</p>
+						<h4>Organic farming</h4>
+						<p class="mt-2">Build your own organic farm with proper step by step instructions </p>
 					</div>
 				</a>
 			</div>
